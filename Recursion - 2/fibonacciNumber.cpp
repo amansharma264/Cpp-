@@ -7,5 +7,5 @@ int fibo(int n){
 }
 
 int main(){
-   cout << fibo(10);
+    fibo(8);
 }
