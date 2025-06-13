@@ -1,3 +1,4 @@
+// Finding all permutations of an string given all elements of the string are unique
 #include<iostream>
 #include<string>
 using namespace std;
