@@ -1,3 +1,4 @@
+// Generate all binary string of length n without consecutive 1's.
 #include<iostream>
 using namespace std;
 
