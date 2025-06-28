@@ -24,15 +24,16 @@ void sort01m2(vector<int> & v){
     int i = 0;
     int j = n - 1;
     while(i < j){
-
+        if(v[i] == 0) i++;
+        if(v[j] == 1) j--;
+        
         if(v[i] == 1 && v[j]== 0){
             v[i] = 0;
             v[j] = 1;
             i++;
             j--;
         }
-        if(v[i] == 0) i++;
-        if(v[j] == 1) j--;
+        
         // if(i>j) break;
         
     } 
