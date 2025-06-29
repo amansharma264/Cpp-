@@ -5,6 +5,7 @@ int partition(int arr[], int si, int ei){
     int pivotElement = arr[si];
     int count = 0;
     for(int i = si+1; i<= ei; i++){
+        // if(i == (si+ei)/2) continue;
         if(arr[i] <= pivotElement) count++;
     }
     int pivotIdx = count + si;
@@ -35,7 +36,7 @@ void quickSort(int arr[], int si, int ei){
 }
 
 int main(){
-    int arr[] = {5,1,8,2,7,6,3,4};
+    int arr[] = {5,1,8,2,7,6,3,4,-8};
     int n = sizeof(arr)/sizeof(arr[0]);
     for(int i = 0; i<n; i++){
         cout << arr[i] << " ";
