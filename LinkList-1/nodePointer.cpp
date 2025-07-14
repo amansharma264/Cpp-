@@ -17,9 +17,12 @@ int main(){
    a->next = b;
    b->next = c;
    c->next = d;
-   Node* temp = a;
-   while(temp != NULL){
-    cout << temp->val << " ";
-    temp = temp->next;
-   }
+
+   cout << (a->next)->next->next->val;
+
+//    Node* temp = a;
+//    while(temp != NULL){
+//     cout << temp->val << " ";
+//     temp = temp->next;
+//    }
 }
