@@ -29,6 +29,12 @@ int size(Node* head){
     return n;
 }
 
+void displayrec(Node* head){
+    if(head == NULL) return;
+    cout << head->val<< " ";
+    displayrec(head->next);
+}
+
 int main(){
    Node* a = new Node(10);
    Node* b = new Node(20);
@@ -48,6 +54,7 @@ int main(){
 //     temp = temp->next;
 //    }
 
-display(a);
-cout << size(a);
+// display(a);
+// cout << size(a);
+displayrec(a);
 }
