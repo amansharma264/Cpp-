@@ -35,6 +35,12 @@ void displayrec(Node* head){
     displayrec(head->next);
 }
 
+void insertAtEnd(Node* head, int val){
+    Node*t = new Node(val);
+    while(head->next!=NULL) head = head->next;
+    head->next = t;
+}
+
 int main(){
    Node* a = new Node(10);
    Node* b = new Node(20);
@@ -45,6 +51,9 @@ int main(){
    b->next = c;
    c->next = d;
    d->next = e;
+   display(a);
+   insertAtEnd(a, 80);
+   display(a);
 
 //    cout << (a->next)->next->next->val;
 
@@ -53,8 +62,6 @@ int main(){
 //     cout << temp->val << " ";
 //     temp = temp->next;
 //    }
-
-// display(a);
 // cout << size(a);
-displayrec(a);
+// displayrec(a);
 }
