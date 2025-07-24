@@ -12,12 +12,32 @@ class Node{ // user defined datatypes
         }
 };
 
-void display(Node* head){
+void display(Node* head){  // O(1) space
     while(head){
         cout << head->val << " ";
         head = head->next;
     }
     cout << endl;
+}
+
+void displayRev(Node* tail){
+    while(tail){
+        cout << tail->val << " ";
+        tail = tail->prev;
+    }
+    cout << endl;
+}
+
+void displayRec(Node* head){ // O(n) space 
+    if(head == NULL) return;
+    cout << head->val << " ";
+    displayRec(head->next);
+}
+
+void displayRecRev(Node* head){ // O(n) space
+    if(head == NULL) return;
+    displayRecRev(head->next);
+    cout << head->val << " ";
 }
 
 int main(){
@@ -36,4 +56,5 @@ int main(){
     c->prev = b;
     b->prev = a;
     display(a);
+    displayRev(e);
 }
