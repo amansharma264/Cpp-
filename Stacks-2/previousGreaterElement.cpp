@@ -13,37 +13,26 @@ int main(){
     }
     cout << endl;
 
-    // Next Greater element
-    int nge[n];
-    // Brute force solutions  Tc = O(n^2), SC = O(1)
-    // for(int i = 0; i<n; i++){
-    //     nge[i] = -1;
-    //     for(int j = i+1; j<n; j++){
-    //             if(arr[j] > arr[i]){
-    //                 nge[i] = arr[j];
-    //                 break;
-    //             }
-    //     }
-    // }
-
+    // prev Greater element
+    int pge[n];
     // Using a stack : Pop, Ans, push
     stack<int> st;
-    nge[n-1] = -1;
-    st.push(arr[n-1]);
-    for(int i = n-2; i>=0; i--){
+    pge[0] = -1;
+    st.push(arr[0]);
+    for(int i = 1; i<=n-1; i++){
         // pop all the elements smaller than arr[i]
         while(st.size() > 0 && st.top()<= arr[i]){
             st.pop();
         }
         // mark the ans in next greater element array
-        if(st.size() == 0) nge[i] = -1;
-        else nge[i] = st.top();
+        if(st.size() == 0) pge[i] = -1;
+        else pge[i] = st.top();
         // push the element arr[i] 
         st.push(arr[i]);
     }
     
     for(int i = 0; i<n; i++){
-        cout << nge[i] << " ";
+        cout << pge[i] << " ";
     }
     cout << endl;
 }
