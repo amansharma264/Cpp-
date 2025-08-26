@@ -35,6 +35,18 @@ int size(Node* root){
     return 1 + size(root->left) + size(root->right);
 }
 
+int maxInTree(Node* root){
+    if(root == NULL) return INT_MIN;
+    int lMax = maxInTree(root->left);
+    int rMax = maxInTree(root->right);
+    return max(root->val, max(lMax, rMax));
+}
+
+int levels(Node* root){
+    if(root == NULL) return 0;
+    return 1 + max(levels(root->left), levels(root->right));
+}
+
 int main(){
     Node* a = new Node(1); // root
     Node* b = new Node(2);
@@ -54,4 +66,6 @@ int main(){
     cout << endl;
     cout << sum(a) << endl;
     cout << size(a) << endl;
+    cout << maxInTree(a) << endl;
+    cout << levels(a) << endl;
 }
