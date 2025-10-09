@@ -1,30 +1,21 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <set>
 using namespace std;
-int main(){
+
+int main() {
     int t;
     cin >> t;
-    while(t--){
+    while (t--) {
         int n;
         cin >> n;
         vector<int> v(n);
-        for(int i = 0; i<n; i++){
-            cin >> v[i];
-        }
-        bool flag = true;
-        for(int i = 1; i<n; i++){
-            if(v[i] != v[0]){
-                flag = false;
-                break;
-            }
-        }
-        if(flag){
-            cout << "YES" << endl;
-        }
-        else{
-            cout << "NO" << endl;
-        }
+        for (int i = 0; i < n; i++) cin >> v[i];
+        
+        set<int> s(v.begin(), v.end());
+        
+        if (s.size() <= 2) cout << "YES\n";
+        else cout << "NO\n";
     }
     return 0;
 }
