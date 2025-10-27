@@ -1,27 +1,33 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
+#define fastio() ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr)
+#define ll long long
+#define endl '\n'
+
 int main(){
-    int n;
+    fastio();
+    ll n;
     cin >> n;
     string s;
     cin >> s;
-    int anton = 0;
-    int danik = 0;
-    for(int i = 0; i<n; i++){
+    ll countA = 0;
+    ll countB = 0;
+    for(ll i = 0; i<n; i++){
         if(s[i] == 'A'){
-            anton++;
+            countA++;
         }
-        else if(s[i] == 'D'){
-            danik++;
+        else if (s[i] == 'D') {
+            countB++;
         }
     }
-    if(anton > danik){
-        cout << "Anton";
+    if(countA > countB){
+        cout << "Anton\n";
     }
-    else if(danik > anton){
-        cout << "Danik";
+    else if (countB > countA) {
+        cout << "Danik\n";
     }
     else{
-        cout << "Friendship";
+        cout << "Friendship\n";
     }
 }
