@@ -61,7 +61,7 @@ int main() {
     a->left = b; a->right = c;
     b->left = d; b->right = e;
     c->left = f; c->right = g;
-    // cout << isMax(a);
+    cout << isMax(a);
     // solutions
     if(isCBT(a) && isMax(a)) cout << "Tree is max Heap";
     else cout << "Tree is not a max Heap";
